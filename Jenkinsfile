@@ -4,6 +4,10 @@ pipeline {
     }
 
    stages {
+                 stage('Test') {
+            steps {
+                sh 'node --version'
+            }
       stage('Verify Branch') {
          steps {
             echo "$GIT_BRANCH"
