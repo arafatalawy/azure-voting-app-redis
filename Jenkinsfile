@@ -6,7 +6,7 @@ pipeline {
    stages {
                  stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'jjjjjjjjjjjj'
             }
                  }
       stage('Verify Branch') {
