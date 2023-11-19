@@ -1,5 +1,7 @@
 pipeline {
-   agent any
+      agent {
+        docker { image 'node:20.9.0-alpine3.18' }
+    }
 
    stages {
       stage('Verify Branch') {
@@ -9,7 +11,7 @@ pipeline {
       }
       stage('Docker Build') {
          steps {
-            sh(script: 'docker-compose build')
+            sh(script: 'docker compose build')
          }
       }
    }
