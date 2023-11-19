@@ -9,12 +9,12 @@ pipeline {
       }
       stage('Docker Build') {
          steps {
-            sh(script: 'docker compose build')
+            sh(script: 'docker-compose build')
          }
       }
       stage('Start App') {
          steps {
-            sh(script: 'docker compose up -d')
+            sh(script: 'docker-compose up -d')
          }
       }
       stage('Run Tests') {
@@ -33,7 +33,7 @@ pipeline {
    }
    post {
       always {
-         sh(script: 'docker compose down')
+         sh(script: 'docker-compose down')
       }
    }
 }
