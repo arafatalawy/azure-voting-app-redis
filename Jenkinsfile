@@ -12,7 +12,7 @@ pipeline {
          steps {
              pwsh(script:'docker images -a')
             pwsh(script: '''
-            cd azure-voting-app-redis/azure-vote /
+            cd azure-voting-app-redis/azure-vote/azure-vote /
             docker images -a
             docker build -t jenkins-pipeline .
             docker images -a
