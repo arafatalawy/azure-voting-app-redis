@@ -11,7 +11,8 @@ pipeline {
          steps {
             sh(script: '''
             cd azure-vote/
-            docker build -t jenkins-pipeline .')
+            docker build -t jenkins-pipeline .
+           cd .. ''')
          }
       }
       stage('Start App') {
