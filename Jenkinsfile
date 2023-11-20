@@ -9,7 +9,7 @@ pipeline {
       }
       stage('Docker Build') {
          steps {
-            sh(script: 'docker-compose build')
+            sh(script: 'docker build -t jenkins-pipeline .')
          }
       }
       stage('Start App') {
