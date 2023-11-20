@@ -17,6 +17,7 @@ pipeline {
       }
       stage('Start App') {
          steps {
+             sh (script: "chmod +x -R ${env.WORKSPACE}")
             sh(script: """
                docker ps -a
                docker-compose up -d
