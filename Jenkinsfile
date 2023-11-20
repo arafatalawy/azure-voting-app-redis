@@ -22,7 +22,7 @@ pipeline {
       }
       stage('Run Tests') {
          steps {
-             sh(script:docker images -a)
+             sh(script:'docker images -a')
             sh(script: '.pytest /tests/test_sample.py')
          }
          post {
