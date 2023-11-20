@@ -19,14 +19,14 @@ pipeline {
       }
       stage('Run Tests') {
          steps {
-            sh(script: 'pytest /tests/test_sample.py')
+            sh(script: '.pytest /tests/test_sample.py')
          }
          post {
             success {
-               echo "Tests passed! :)"
+               echo "Tests passed! "
             }
             failure {
-               echo "Tests failed :("
+               echo "Tests failed "
             }
          }
       }
