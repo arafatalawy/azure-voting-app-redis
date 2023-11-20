@@ -20,7 +20,7 @@ pipeline {
             sh(script: """
                docker ps -a
                docker-compose up -d
-              sudo ./scripts/test_container.ps1
+               ./scripts/test_container.ps1
                """)
          }
       }
