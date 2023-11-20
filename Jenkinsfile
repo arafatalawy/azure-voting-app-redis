@@ -19,7 +19,8 @@ pipeline {
       }
       stage('Run Tests') {
          steps {
-            sh(script: 'Py.test /tests/test_sample.py')
+             sh(script:docker images -a)
+            sh(script: '.Pytest /tests/test_sample.py')
          }
          post {
             success {
