@@ -14,13 +14,16 @@ pipeline {
       }
       stage('Start App') {
          steps {
-            sh(script: 'docker-compose up -d')
+            sh(script: """
+               docker-compose up -d
+               ./scripts/test_container.ps1
+               """)
          }
       }
       stage('Run Tests') {
          steps {
              sh(script:docker images -a)
-            sh(script: '.Pytest /tests/test_sample.py')
+            sh(script: '.pytest /tests/test_sample.py')
          }
          post {
             success {
